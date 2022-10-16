@@ -12,19 +12,8 @@ void BuildingExt::ExtData::DisplayGrinderRefund()
 {
 	if (this->AccumulatedGrindingRefund && Unsorted::CurrentFrame % 15 == 0)
 	{
-		int refundAmount = this->AccumulatedGrindingRefund;
-		bool isPositive = refundAmount > 0;
-		auto color = isPositive ? ColorStruct { 0, 255, 0 } : ColorStruct { 255, 0, 0 };
-		auto coords = this->OwnerObject()->GetRenderCoords();
-		int width = 0, height = 0;
-		wchar_t moneyStr[0x20];
-		swprintf_s(moneyStr, L"%ls%ls%d", isPositive ? L"+" : L"-", Phobos::UI::CostLabel, std::abs(refundAmount));
-		BitFont::Instance->GetTextDimension(moneyStr, &width, &height, 120);
-		Point2D pixelOffset = Point2D::Empty;
-		pixelOffset += this->TypeExtData->Grinding_DisplayRefund_Offset;
-		pixelOffset.X -= width / 2;
-
-		FlyingStrings::Add(moneyStr, coords, color, pixelOffset);
+		FlyingStrings::AddMoneyString(this->AccumulatedGrindingRefund, this->OwnerObject()->Owner,
+			this->TypeExtData->Grinding_DisplayRefund_Houses, this->OwnerObject()->GetRenderCoords(), this->TypeExtData->Grinding_DisplayRefund_Offset);
 
 		this->AccumulatedGrindingRefund = 0;
 	}
