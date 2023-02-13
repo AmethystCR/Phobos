@@ -189,6 +189,7 @@ This page lists all the individual contributions to the project by their author.
    - Misc CN doc fix, code refactor
    - Power delta counter : blackout indication mark
    - Harvester counter
+   - Income money string indication upon ore dump
    - Warhead superweapon launch logic
    - "Shield is broken" trigger event
    - RadialIndicator observer visibility

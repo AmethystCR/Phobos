@@ -8,14 +8,19 @@
 template<> const DWORD Extension<BuildingClass>::Canary = 0x87654321;
 BuildingExt::ExtContainer BuildingExt::ExtMap;
 
-void BuildingExt::ExtData::DisplayGrinderRefund()
+void BuildingExt::ExtData::DisplayIncomeString()
 {
-	if (this->AccumulatedGrindingRefund && Unsorted::CurrentFrame % 15 == 0)
+	if (this->AccumulatedIncome && Unsorted::CurrentFrame % 15 == 0)
 	{
-		FlyingStrings::AddMoneyString(this->AccumulatedGrindingRefund, this->OwnerObject()->Owner,
-			this->TypeExtData->Grinding_DisplayRefund_Houses, this->OwnerObject()->GetRenderCoords(), this->TypeExtData->Grinding_DisplayRefund_Offset);
+		FlyingStrings::AddMoneyString(
+			this->AccumulatedIncome,
+			this->OwnerObject()->Owner,
+			this->TypeExtData->DisplayIncome_Houses.Get(RulesExt::Global()->DisplayIncome_Houses.Get()),
+			this->OwnerObject()->GetRenderCoords(),
+			this->TypeExtData->DisplayIncome_Offset
+		);
 
-		this->AccumulatedGrindingRefund = 0;
+		this->AccumulatedIncome = 0;
 	}
 }
 
@@ -210,11 +215,8 @@ bool BuildingExt::DoGrindingExtras(BuildingClass* pBuilding, TechnoClass* pTechn
 	{
 		const auto pTypeExt = pExt->TypeExtData;
 
-		if (refund && pTypeExt->Grinding_DisplayRefund && (pTypeExt->Grinding_DisplayRefund_Houses == AffectedHouse::All ||
-			EnumFunctions::CanTargetHouse(pTypeExt->Grinding_DisplayRefund_Houses, pBuilding->Owner, HouseClass::CurrentPlayer)))
-		{
-			pExt->AccumulatedGrindingRefund += refund;
-		}
+		if (pTypeExt->DisplayIncome.Get(RulesExt::Global()->DisplayIncome.Get()))
+			pExt->AccumulatedIncome += refund;
 
 		if (pTypeExt->Grinding_Weapon.isset()
 			&& Unsorted::CurrentFrame >= pExt->GrindingWeapon_LastFiredFrame + pTypeExt->Grinding_Weapon.Get()->ROF)
@@ -267,7 +269,7 @@ void BuildingExt::ExtData::Serialize(T& Stm)
 		.Process(this->LimboID)
 		.Process(this->GrindingWeapon_LastFiredFrame)
 		.Process(this->CurrentAirFactory)
-		.Process(this->AccumulatedGrindingRefund)
+		.Process(this->AccumulatedIncome)
 		;
 }
 

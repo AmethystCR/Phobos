@@ -26,7 +26,7 @@ public:
 		int LimboID;
 		int GrindingWeapon_LastFiredFrame;
 		BuildingClass* CurrentAirFactory;
-		int AccumulatedGrindingRefund;
+		int AccumulatedIncome;
 
 		ExtData(BuildingClass* OwnerObject) : Extension<BuildingClass>(OwnerObject)
 			, TypeExtData { nullptr }
@@ -34,10 +34,10 @@ public:
 			, LimboID { -1 }
 			, GrindingWeapon_LastFiredFrame { 0 }
 			, CurrentAirFactory { nullptr }
-			, AccumulatedGrindingRefund { 0 }
+			, AccumulatedIncome { 0 }
 		{ }
 
-		void DisplayGrinderRefund();
+		void DisplayIncomeString();
 		void ApplyPoweredKillSpawns();
 
 		virtual ~ExtData() = default;
