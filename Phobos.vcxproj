@@ -27,7 +27,6 @@
     <ClCompile Include="src\Commands\QuickSave.cpp" />
     <ClCompile Include="src\Commands\ToggleDigitalDisplay.cpp" />
     <ClCompile Include="src\Ext\Anim\Hooks.cpp" />
-    <ClCompile Include="src\Ext\Building\Hooks.IncomeAndSelling.cpp" />
     <ClCompile Include="src\Ext\Bullet\Trajectories\BombardTrajectory.cpp" />
     <ClCompile Include="src\Ext\Bullet\Trajectories\PhobosTrajectory.cpp" />
     <ClCompile Include="src\Ext\Bullet\Trajectories\StraightTrajectory.cpp" />
@@ -62,6 +61,9 @@
     <ClCompile Include="src\Ext\Anim\Hooks.AnimCreateUnit.cpp" />
     <ClCompile Include="src\Ext\Building\Body.cpp" />
     <ClCompile Include="src\Ext\Building\Hooks.cpp" />
+    <ClCompile Include="src\Ext\Building\Hooks.Grinding.cpp" />
+    <ClCompile Include="src\Ext\Building\Hooks.Refinery.cpp" />
+    <ClCompile Include="src\Ext\Building\Hooks.Selling.cpp" />
     <ClCompile Include="src\Ext\BulletType\Body.cpp" />
     <ClCompile Include="src\Ext\Bullet\Body.cpp" />
     <ClCompile Include="src\Ext\Bullet\Hooks.cpp" />
@@ -91,7 +93,6 @@
     <ClCompile Include="src\Ext\WarheadType\Detonate.cpp" />
     <ClCompile Include="src\Ext\Techno\Hooks.Firing.cpp" />
     <ClCompile Include="src\Ext\Techno\Hooks.Shield.cpp" />
-    <ClCompile Include="src\Ext\Techno\Hooks.Grinding.cpp" />
     <ClCompile Include="src\Ext\Techno\Hooks.Transport.cpp" />
     <ClCompile Include="src\Ext\Tiberium\Body.cpp" />
     <ClCompile Include="src\Ext\Tiberium\Hooks.cpp" />
