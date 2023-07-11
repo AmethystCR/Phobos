@@ -9,6 +9,7 @@
 #include <string.h>
 #include <iterator>
 #include <vector>
+#include <string>
 
 #define MIN(x) std::numeric_limits<x>::min()
 #define MAX(x) std::numeric_limits<x>::max()
@@ -28,5 +29,5 @@ public:
 	static double FastPow(double x, double n);
 	static bool HasHealthRatioThresholdChanged(double oldRatio, double newRatio);
 	static bool ApplyTheaterSuffixToString(char* str);
-	static int CountDigitsInNumber(int number);
+	static std::string IntToDigits(int num);
 };

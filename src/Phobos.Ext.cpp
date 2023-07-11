@@ -27,6 +27,7 @@
 
 #include <New/Type/RadTypeClass.h>
 #include <New/Type/LaserTrailTypeClass.h>
+#include <New/Type/DigitalDisplayTypeClass.h>
 
 #include <utility>
 
@@ -252,7 +253,8 @@ auto MassActions = MassAction <
 	ShieldTypeClass,
 	LaserTrailTypeClass,
 	RadTypeClass,
-	ShieldClass
+	ShieldClass,
+	DigitalDisplayTypeClass
 	// other classes
 > ();
 

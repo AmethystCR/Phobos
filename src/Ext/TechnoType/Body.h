@@ -7,6 +7,7 @@
 
 #include <New/Type/ShieldTypeClass.h>
 #include <New/Type/LaserTrailTypeClass.h>
+#include <New/Type/DigitalDisplayTypeClass.h>
 
 class Matrix3D;
 
@@ -125,6 +126,9 @@ public:
 		Valueable<bool> Explodes_KillPassengers;
 		Nullable<int> DeployFireWeapon;
 
+		Valueable<bool> DigitalDisplay_Disable;
+		ValueableVector<DigitalDisplayTypeClass*> DigitalDisplayTypes;
+
 		struct LaserTrailDataEntry
 		{
 			ValueableIdx<LaserTrailTypeClass> idxType;
@@ -241,6 +245,8 @@ public:
 			, IronCurtain_KeptOnDeploy{ }
 			, Explodes_KillPassengers { true }
 			, DeployFireWeapon { }
+			, DigitalDisplay_Disable { false }
+			, DigitalDisplayTypes {}
 		{ }
 
 		virtual ~ExtData() = default;

@@ -9,12 +9,12 @@
 #include <Utilities/TemplateDef.h>
 #include <Utilities/Debug.h>
 
-
 class AnimTypeClass;
 class MouseCursor;
 class TechnoTypeClass;
 class VocClass;
 class WarheadTypeClass;
+class DigitalDisplayTypeClass;
 
 class RulesExt
 {
@@ -69,6 +69,11 @@ public:
 
 		Valueable<AffectedHouse> RadialIndicatorVisibility;
 
+		ValueableVector<DigitalDisplayTypeClass*> Buildings_DefaultDigitalDisplayTypes;
+		ValueableVector<DigitalDisplayTypeClass*> Infantry_DefaultDigitalDisplayTypes;
+		ValueableVector<DigitalDisplayTypeClass*> Vehicles_DefaultDigitalDisplayTypes;
+		ValueableVector<DigitalDisplayTypeClass*> Aircraft_DefaultDigitalDisplayTypes;
+
 		ExtData(RulesClass* OwnerObject) : Extension<RulesClass>(OwnerObject)
 			, Storage_TiberiumIndex { -1 }
 			, InfantryGainSelfHealCap {}
@@ -106,6 +111,10 @@ public:
 			, ToolTip_Background_Opacity { 100 }
 			, ToolTip_Background_BlurSize { 0.0f }
 			, RadialIndicatorVisibility { AffectedHouse::Allies }
+			, Buildings_DefaultDigitalDisplayTypes {}
+			, Infantry_DefaultDigitalDisplayTypes {}
+			, Vehicles_DefaultDigitalDisplayTypes {}
+			, Aircraft_DefaultDigitalDisplayTypes {}
 		{ }
 
 		virtual ~ExtData() = default;

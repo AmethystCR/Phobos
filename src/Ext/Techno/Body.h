@@ -118,4 +118,9 @@ public:
 	static void SyncIronCurtainStatus(TechnoClass* pFrom, TechnoClass* pTo);
 	static CoordStruct PassengerKickOutLocation(TechnoClass* pThis, FootClass* pPassenger, int maxAttempts);
 	static WeaponTypeClass* GetDeployFireWeapon(TechnoClass* pThis, int& weaponIndex);
+	static Point2D GetScreenLocation(TechnoClass* pThis);
+	static Point2D GetFootSelectBracketPosition(TechnoClass* pThis, Anchor anchor);
+	static Point2D GetBuildingSelectBracketPosition(TechnoClass* pThis, BuildingSelectBracketPosition bracketPosition);
+	static void ProcessDigitalDisplays(TechnoClass* pThis);
+	static void GetValuesForDisplay(TechnoClass* pThis, DisplayInfoType infoType, int& value, int& maxValue);
 };

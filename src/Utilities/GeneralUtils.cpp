@@ -135,16 +135,23 @@ bool GeneralUtils::ApplyTheaterSuffixToString(char* str)
 	return false;
 }
 
-
-int GeneralUtils::CountDigitsInNumber(int number)
+std::string GeneralUtils::IntToDigits(int num)
 {
-	int digits = 0;
+	std::string digits;
 
-	while (number)
+	if (num == 0)
 	{
-		number /= 10;
-		digits++;
+		digits.push_back('0');
+		return digits;
 	}
+
+	while (num)
+	{
+		digits.push_back(static_cast<char>(num % 10) + '0');
+		num /= 10;
+	}
+
+	std::reverse(digits.begin(), digits.end());
 
 	return digits;
 }

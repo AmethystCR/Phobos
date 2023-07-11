@@ -206,6 +206,9 @@ void TechnoTypeExt::ExtData::LoadFromINIFile(CCINIClass* const pINI)
 	this->Explodes_KillPassengers.Read(exINI, pSection, "Explodes.KillPassengers");
 	this->DeployFireWeapon.Read(exINI, pSection, "DeployFireWeapon");
 
+	this->DigitalDisplay_Disable.Read(exINI, pSection, "DigitalDisplay.Disable");
+	this->DigitalDisplayTypes.Read(exINI, pSection, "DigitalDisplayTypes");
+
 	// Ares 0.2
 	this->RadarJamRadius.Read(exINI, pSection, "RadarJamRadius");
 
@@ -256,6 +259,7 @@ void TechnoTypeExt::ExtData::LoadFromINIFile(CCINIClass* const pINI)
 	this->ForceWeapon_Naval_Decloaked.Read(exINI, pSection, "ForceWeapon.Naval.Decloaked");
 	this->Ammo_Shared.Read(exINI, pSection, "Ammo.Shared");
 	this->Ammo_Shared_Group.Read(exINI, pSection, "Ammo.Shared.Group");
+
 
 	this->PronePrimaryFireFLH.Read(exArtINI, pArtSection, "PronePrimaryFireFLH");
 	this->ProneSecondaryFireFLH.Read(exArtINI, pArtSection, "ProneSecondaryFireFLH");
@@ -363,6 +367,8 @@ void TechnoTypeExt::ExtData::Serialize(T& Stm)
 		.Process(this->IronCurtain_KeptOnDeploy)
 		.Process(this->Explodes_KillPassengers)
 		.Process(this->DeployFireWeapon)
+		.Process(this->DigitalDisplay_Disable)
+		.Process(this->DigitalDisplayTypes)
 		;
 }
 void TechnoTypeExt::ExtData::LoadFromStream(PhobosStreamReader& Stm)
