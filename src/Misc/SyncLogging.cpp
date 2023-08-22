@@ -105,7 +105,7 @@ void SyncLogger::WriteSyncLog(const char* logFilename)
 
 		fprintf(pLogFile, "\nPhobos synchronization log:\n\n");
 
-		int frameDigits = GeneralUtils::CountDigitsInNumber(Unsorted::CurrentFrame);
+		int frameDigits = std::stoi(GeneralUtils::IntToDigits(Unsorted::CurrentFrame));
 
 		WriteRNGCalls(pLogFile, frameDigits);
 		WriteFacingChanges(pLogFile, frameDigits);
@@ -222,9 +222,9 @@ void SyncLogger::WriteMissionOverrides(FILE* const pLogFile, int frameDigits)
 
 void SyncLogger::WriteAnimCreations(FILE* const pLogFile, int frameDigits)
 {
-	int xDigits = GeneralUtils::CountDigitsInNumber(SyncLogger::AnimCreations_HighestX);
-	int yDigits = GeneralUtils::CountDigitsInNumber(SyncLogger::AnimCreations_HighestY);
-	int zDigits = GeneralUtils::CountDigitsInNumber(SyncLogger::AnimCreations_HighestZ);
+	int xDigits = std::stoi(GeneralUtils::IntToDigits(SyncLogger::AnimCreations_HighestX));
+	int yDigits = std::stoi(GeneralUtils::IntToDigits(SyncLogger::AnimCreations_HighestY));
+	int zDigits = std::stoi(GeneralUtils::IntToDigits(SyncLogger::AnimCreations_HighestZ));
 
 	fprintf(pLogFile, "Animation creations:\n");
 

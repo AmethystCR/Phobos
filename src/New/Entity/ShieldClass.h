@@ -73,10 +73,10 @@ private:
 	void TemporalCheck();
 	bool ConvertCheck();
 
-	void DrawShieldBar_Building(int length, Point2D* pLocation, RectangleStruct* pBound);
-	void DrawShieldBar_Other(int length, Point2D* pLocation, RectangleStruct* pBound);
+	void DrawShieldBar_Building(const int length, Point2D* pLocation, RectangleStruct* pBound);
+	void DrawShieldBar_Other(const int length, Point2D* pLocation, RectangleStruct* pBound);
 	int DrawShieldBar_Pip(const bool isBuilding);
-	int DrawShieldBar_PipAmount(int length);
+	int DrawShieldBar_PipAmount(const int length);
 
 	/// Properties ///
 	TechnoClass* Techno;

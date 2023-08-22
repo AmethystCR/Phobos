@@ -19,7 +19,6 @@
 #include <Ext/House/Body.h>
 #include <Misc/FlyingStrings.h>
 
-#include <Utilities/AresFunctions.h>
 #include <Utilities/EnumFunctions.h>
 
 template<> const DWORD Extension<TechnoClass>::Canary = 0x55555555;
