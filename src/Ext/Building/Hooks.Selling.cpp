@@ -1,6 +1,7 @@
 #include "Body.h"
 #include <GameStrings.h>
 
+#include <Utilities/Macro.h>
 // SellSound and EVA dehardcode
 DEFINE_HOOK(0x4D9F7B, FootClass_Sell, 0x6)
 {
