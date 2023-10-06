@@ -246,6 +246,9 @@ Phobos fixes:
 - Fixed `Interceptor` not resetting target if the intercepted projectile changes type to non-interceptable one afterwards (by Starkku)
 - Fixed a potential crash caused by a faulty hook in weapon selection code (by Starkku)
 - Fixed `PlacementPreview` setting for BuildingTypes not being parsed from INI (by Starkku)
+- Optimized performance for map trigger retint action light source fix (by Starkku)
+- Fixed owned `LimboDelivery` buildings not being saved correctly in savegames (by Starkku)
+- Fixed a typo in weapon selector code causing issues with `NoAmmoWeapon` and related checks (by Starkku)
 </details>
 
 ### 0.3.0.1
